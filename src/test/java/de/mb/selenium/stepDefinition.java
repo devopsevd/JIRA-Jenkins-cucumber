@@ -25,14 +25,14 @@ public class stepDefinition {
 	@Given("^The selenium setup is complete$")
 	public void setUp() throws MalformedURLException {
 		String serverUrl = System.getProperty("grid.server.url");
-		String gridServerUrl = "http://10.144.2.237:4444/wd/hub";
+		String gridServerUrl = "http://10.241.49.237:4444/wd/hub";
 		if (serverUrl != null) {
 			gridServerUrl = serverUrl;
 		}
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
 		URL gridUrl = new URL(gridServerUrl);
 		driver = new RemoteWebDriver(gridUrl, capability);
-		driver.get("http://10.144.2.14:80");
+		driver.get("http://www.google.com");
 	}
 
 	@When("^print a simple message$")
